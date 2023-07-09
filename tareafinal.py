@@ -4,7 +4,7 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.arima.model import ARIMA
 
 
-df = pd.read_excel("C:/Users/oscar/OneDrive/Escritorio/Proyecto/last_uci.xlsx")
+df = pd.read_excel("C:/Users/oscar/OneDrive/Escritorio/Proyecto/last_uci_diario.xlsx")
 print(df.head())
 
 #calcular valores faltantes en cada columna y los almacena en val_faltsante
