@@ -58,6 +58,7 @@ plt.show()
 
 # Crea y ajusta un modelo ARIMA
 modelo = ARIMA(traspuesto['Total'], order=(5,1,0))
-modelo_ajustado = modelo.fit
+modelo_ajustado = modelo.fit()
+print(modelo_ajustado.summary())
 
 
