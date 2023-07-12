@@ -34,20 +34,15 @@ traspuesto= traspuesto.rename(columns={'index':'fecha'})
 valor_medio=traspuesto['Total'].mean()
 print(valor_medio)
 
-#histograma columna total
 plt.hist(traspuesto['Total'])
 plt.show()
 
-#transforma los datos de las columnas total y region metropolitana en datos numericos, para poder hacer la correlacion
 traspuesto["Total"] = pd.to_numeric(traspuesto["Total"])
 traspuesto["Región Metropolitana de Santiago"] = pd.to_numeric(traspuesto["Región Metropolitana de Santiago"])
 
-#Calcula la correlación entre las columnas total y Región Metropolitana de Santiago
-#  almacena el resultado en la variable correlacion.
 correlacion = traspuesto["Total"].corr(traspuesto["Región Metropolitana de Santiago"])
 print(correlacion)
 
-#Crea un gráfico de línea con la columna total en el eje x y la columna Región Metropolitana de Santiagoen el eje y
 traspuesto.plot(x='Total', y='Región Metropolitana de Santiago')
 plt.show()
 
@@ -59,5 +54,3 @@ plt.show()
 # Crea y ajusta un modelo ARIMA
 modelo = ARIMA(traspuesto['Total'], order=(5,1,0))
 modelo_ajustado = modelo.fit
-
-
